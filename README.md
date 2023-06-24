@@ -6,6 +6,7 @@ Desarrollado con Java Spring Boot, thymeleaf, MS Sql Server, Transbank
 Es necesario considerar las siguientes configuraciones:
 
 - Copiar la carpeta Temp en la raiz del disco C: Para poder visualizar las imagenes de los eventos.
+- Modifica el archivo .properties con los valores para enviar correo.
 - Utilizar MS Sql Server con usuario SA además de modificar la contraseña en el archivo .properties del proyecto Spring.
 - Cargar previamente la base de datos del script onlineticketDB. 
 
