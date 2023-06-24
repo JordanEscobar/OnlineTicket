@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ingresar Eventos</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="justify-content-center">
+	<div class="col-md-4 mt-5">
+		<div class="alert alert-success" th:if="${success} != null" th:text="${success}"></div>	
+	</div>
+
+</div>
+	<div class="container mt-5">	
+		<div class="jumbotron">
+			<h1 class="text-body-emphasis">Evento Imagen</h1>
+			<a class="btn btn-primary" th:href="@{/}">Ver fotos</a>
+		</div>
+		<br>
+		<div class="row g-5">	
+			<div class="col-md-5 col-lg-4 order-md-last">
+			<h3>Registrar Evento</h3>
+				<form th:action="@{/registroeventos}" th:object="${eventos}" method="POST" enctype="multipart/form-data">
+					<label class="mb-3">Nombre</label><br>
+					<input class="form-control" type="text" th:field="*{nombre}" id="nombre"><br>
+					<!-- <label class="mb-3">Fecha</label><br>
+					<input class="form-control" type="date" th:field="*{fecha}" id="fecha"><br>
+					<label class="mb-3">Hora</label><br>
+					<input class="form-control" type="date" th:field="*{hora}" id="hora"><br> -->
+					<label class="mb-3">Recinto</label><br>
+					<input class="form-control" type="text" th:field="*{recinto}" id="recinto"><br>
+					<label class="mb-3">Descripcion</label><br>
+					<input class="form-control" type="text" th:field="*{descripcion}" id="descripcion"><br>
+					<label class="mb-3">Cantidad Asientos</label><br>
+					<input class="form-control" type="number" th:field="*{cantidadasiento}" id="cantidadasiento"><br>
+					<label class="mb-3">Cantidad Disponible</label><br>
+					<input class="form-control" type="number" th:field="*{cantidaddisponible}" id="cantidaddisponible"><br>
+					<label class="mb-3">Tipo Evento</label><br>
+					<input class="form-control" type="text" th:field="*{tipoevento}" id="tipoevento"><br>
+					<label class="mb-3">Foto</label>
+					<input class="form-control" type="file" name="file" id="file">
+					<br>
+					<button type="submit" class="btn btn-success">Guardar</button>			
+				</form>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
